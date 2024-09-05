@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animação de Elementos</title>
+    <style>
+        #quadrado {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="quadrado"></div>
+    <button onclick="moverQuadrado()">Mover</button>
+
+    <script>
+        function moverQuadrado() {
+            const quadrado = document.getElementById("quadrado");
+            let posicao = 0;
+            const intervalo = setInterval(frame, 10);
+
+            function frame() {
+                if (posicao === 350) {
+                    clearInterval(intervalo);
+                } else {
+                    posicao++;
+                    quadrado.style.top = posicao + "px";
+                    quadrado.style.left = posicao + "px";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

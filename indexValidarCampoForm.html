@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários Dinâmicos</title>
+</head>
+<body>
+    <form id="meuFormulario">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+        <span id="erroNome" style="color: red;"></span><br><br>
+        <button type="submit">Validar</button>
+    </form>
+
+    <script>
+        document.getElementById("meuFormulario").addEventListener("submit", function(event) {
+            event.preventDefault();
+            validarFormulario();
+        });
+
+        function validarFormulario() {
+            const nome = document.getElementById("nome").value;
+            const erroNome = document.getElementById("erroNome");
+
+            if (nome === "") {
+                erroNome.innerText = "O nome é obrigatório.";
+            } else {
+                erroNome.innerText = "";
+                alert("Formulário validado com sucesso!");
+            }
+        }
+    </script>
+</body>
+</html>

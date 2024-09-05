@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserção de Elementos</title>
+</head>
+<body>
+    <ul id="Turma2DS">
+        <li>Luiz</li>
+        <li>Luigi</li>
+    </ul>
+    <button onclick="adicionarItem()">Adicionar Alunos na Turma</button>
+
+    <script>
+        function adicionarItem() {
+            const novoItem = document.createElement("li");
+            novoItem.textContent = "Beatriz";
+            document.getElementById("Turma2DS").appendChild(novoItem);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medalhistas do Brasil - Jogos Olímpicos de Paris 2024</title>
+</head>
+<body>
+    <div>
+        <button onclick="imagemAnterior()">Anterior</button>
+        <img id="imagemGaleria" src="imagem1.jpg" alt="Galeria" width="300">
+        <button onclick="proximaImagem()">Próxima</button>
+    </div>
+
+    <script>
+        const imagens = ["imagem1.jpg", "imagem2.jpg", "imagem3.jpg"];
+        let indice = 0;
+
+        function imagemAnterior() {
+            indice = (indice === 0) ? imagens.length - 1 : indice - 1;
+            document.getElementById("imagemGaleria").src = imagens[indice];
+        }
+
+        function proximaImagem() {
+            indice = (indice === imagens.length - 1) ? 0 : indice + 1;
+            document.getElementById("imagemGaleria").src = imagens[indice];
+        }
+    </script>
+</body>
+</html>
